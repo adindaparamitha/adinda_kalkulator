@@ -1,0 +1,159 @@
+body { 
+   background: url('pink.jpg') no-repeat center center fixed; /* Gambar sebagai latar belakang */
+   background-size: cover; /* Mengisi seluruh area */
+   color: #fafafc; /* Teks putih bersih */
+   font-size: 14px; /* Ukuran font sedikit lebih besar untuk keterbacaan */
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   padding: 20px; /* Menambahkan padding di sekitar body */
+}
+
+#kalkulator {
+   position: relative; /* Untuk memposisikan elemen pseudo */
+   padding: 20px;
+   background: linear-gradient(135deg, #d2a3e8, #77bae3); /* Gradasi abu-abu baja */
+   color: rgb(248, 248, 248);
+   min-width: 300px;
+   border-radius: 12px; /* Sudut yang halus dan modern */
+   box-shadow: 0 0 20px rgba(193, 15, 238, 0.8); /* Glow biru */
+}
+
+#kalkulator::before,
+#kalkulator::after {
+   content: '';
+   position: absolute;
+   background: linear-gradient(135deg, #ab15f0, #6e0fe2); /* Gradasi biru dan silver */
+}
+
+#kalkulator::before {
+   top: 0; /* Border atas */
+   left: 0;
+   right: 0;
+   height: 10px; /* Tinggi border atas */
+   border-radius: 12px 12px 0 0; /* Sudut melengkung */
+   box-shadow: 0 2px 10px rgba(227, 128, 210, 0.5); /* Cahaya lembut biru */
+}
+
+#kalkulator::after {
+   bottom: 0; /* Border bawah */
+   left: 0;
+   right: 0;
+   height: 10px; /* Tinggi border bawah */
+   border-radius: 0 0 12px 12px; /* Sudut melengkung */
+   box-shadow: 0 -2px 10px rgba(194, 72, 231, 0.5); /* Cahaya lembut biru */
+}
+
+#kalkulator .side-border {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 10px; /* Lebar border samping */
+   background: linear-gradient(135deg, #ec9ce4, #ee328d); /* Gradasi biru dan silver */
+}
+
+#kalkulator .side-left {
+   left: 0; /* Border kiri */
+   border-radius: 12px 0 0 12px; /* Sudut melengkung */
+}
+
+#kalkulator .side-right {
+   right: 0; /* Border kanan */
+   border-radius: 0 12px 12px 0; /* Sudut melengkung */
+}
+
+.wrapper {
+   display: flex;
+   gap: 10px;
+   justify-content: space-between;
+   margin: 10px 0;
+}
+
+.wrapper div {
+   width: 100%;
+   padding: 15px; /* Padding untuk tombol */
+   border-radius: 8px; /* Sudut melengkung untuk tombol */
+   transition: all 0.3s; /* Transisi yang halus */
+   font-size: 20px; /* Ukuran font tombol sedikit lebih besar */
+}
+
+#input1, #input2, #operasi-selected {
+   font-size: 30px; /* Ukuran font lebih besar untuk input */
+   font-family: 'Orbitron', sans-serif; /* Font modern untuk angka */
+   background: #f2c3ed; /* Latar belakang gelap untuk bidang input */
+   color: #575458; /* Teks putih untuk kontras */
+   padding: 10px; /* Padding untuk bidang input */
+   border-radius: 8px; /* Sudut melengkung */
+   border: 1px solid #ccc; /* Border halus */
+   box-shadow: 0 2px 5px rgba(186, 67, 233, 0.3); /* Bayangan lembut */
+}
+
+#hasil, #btn-hitung {
+   font-size: 24px; /* Ukuran font lebih besar untuk hasil */
+   background: #9e0ade; /* Merah cerah untuk hasil */
+   color: rgb(241, 237, 241);
+   border-radius: 8px; /* Sudut melengkung konsisten */
+   box-shadow: inset 0 0 15px rgba(197, 55, 237, 0.5); /* Efek cahaya dalam */
+}
+
+#operasi-temporer {
+   font-size: 10px;
+   color: #d9d9d9; /* Abu-abu muda untuk operasi */
+}
+
+.bg-abu { background: #f5c3f7; } /* Abu-abu untuk tombol tidak aktif */
+.bg-red { background: #ce07e9; } /* Merah untuk tombol */
+.bg-dark-brown { background: #cc6aed; } /* Biru metalik */
+.bg-brown { background: #d909ec; } /* Merah metalik */
+.bg-dark-blue { background: #d909ec; } /* Biru modern */
+.bg-purple { 
+   background: linear-gradient(135deg, #f591e3, #f4daf4); /* Gradasi silver metalik */
+} 
+.bg-green { background: #00b050; }
+
+#judul {
+   padding: 15px 0;
+   color: #f6f6f6; /* Warna emas untuk judul */
+   font-family: 'Roboto', sans-serif; /* Font modern */
+   font-weight: bold; /* Judul tebal */
+}
+
+.tombol {
+   border: none; /* Menghapus border untuk tampilan ramping */
+   border-radius: 8px; /* Sudut melengkung untuk tombol */
+   box-shadow: 0 4px 10px #d57cf0 (0, 0, 0, 0.3); /* Bayangan lembut */
+   transition: background 0.3s, transform 0.2s; /* Transisi yang halus */
+}
+
+.tombol-aktif {
+   cursor: pointer;
+}
+
+.tombol-aktif:hover {
+   background: linear-gradient(#f005e1, #b279eb); /* Gradasi halus saat hover */
+   transform: translateY(-3px); /* Efek angkat saat hover */
+   box-shadow: 0 8px 20px rgba(92, 233, 5, 0.4); /* Bayangan lebih dalam saat hover */
+}
+
+.tombol-nonaktif {
+   box-shadow: none !important;
+}
+
+/* Tombol +-, . dan pengaturan lainnya */
+.toggle-negatif {
+   background: #d909ec; /* Merah untuk tombol +- */
+}
+
+.tombol-desimal {
+   background: linear-gradient(135deg, #e372d8, #e3cfe7); /* Silver metalik untuk tombol . */
+}
+
+/* Media Query untuk Desain Responsif */
+@media (max-width: 480px) {
+   body {
+       font-size: 12px; /* Sesuaikan ukuran font untuk layar lebih kecil */
+   }
+   #kalkulator {
+       min-width: 100%; /* Lebar penuh di perangkat seluler */
+   }
+}
